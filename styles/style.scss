@@ -1,0 +1,177 @@
+@import "reset";
+@import "global";
+@import "function";
+
+body {
+  @include grid-centering;
+  background-color: $darkBlue--bg;
+}
+
+.nft-card {
+  width: rem(350);
+  height: auto;
+  background-color: $DarkBlue--card;
+  border-radius: rem(15);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.095);
+  overflow: hidden;
+
+  &__img {
+    position: relative;
+    margin: rem(24);
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: rem(8);
+
+    &:hover &-svg--hover-view {
+      opacity: 1;
+    }
+
+    &-img {
+      width: rem(302);
+      height: rem(302);
+    }
+
+    &-svg {
+      width: rem(302);
+      height: rem(302);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $transperantCyan;
+      }
+
+      &--hover-view {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        background-color: transparent;
+        width: rem(48);
+        height: rem(48);
+      }
+    }
+  }
+
+  &__txt {
+    margin: rem(24) rem(24) rem(32);
+
+    &-heading {
+      font-size: rem(22);
+      line-height: $lh-heading;
+      font-weight: $fw-haeding;
+      color: $white;
+      margin-bottom: rem(16);
+      
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+
+    &-para {
+      font-size: rem(18);
+      font-weight: $fw-body;
+      line-height: $lh-body;
+      color: $softBlue;
+      margin-bottom: rem(24);
+    }
+
+    &-value {
+      @include flex-container;
+      padding-bottom: rem(24);
+      margin-bottom: rem(16);
+      border-bottom: 1px solid $darkBlue--line;
+
+      &-price,
+      &-time {
+        @include flex-container;
+        gap: rem(7.7);
+        line-height: 1.25;
+      }
+
+      &-price {
+        color: $cyan;
+        font-weight: $fw-haeding;
+      }
+
+      &-time {
+        color: $softBlue;
+        font-weight: $fw-caption;
+      }
+    }
+  }
+}
+
+.person {
+  @include flex-container;
+  justify-content: flex-start;
+  gap: rem(16);
+
+  &-img {
+    border: 1px solid $white;
+    border-radius: 50%;
+    width: rem(33);
+    height: rem(33);
+  }
+
+  &-txt {
+    color: $softBlue;
+    line-height: 1.25;
+
+    &-name {
+      color: $white;
+
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nft-card {
+    width: rem(327);
+
+    &__img {
+      &-img {
+        width: rem(278);
+        height: rem(278);
+      }
+
+      &-svg {
+        width: rem(278);
+        height: rem(278);
+      }
+    }
+
+    &__txt {
+      margin: rem(24);
+
+      &-heading {
+        margin-bottom: rem(12);
+
+      }
+
+      &-para {
+        margin-bottom: rem(16);
+      }
+
+      &-value {
+        font-size: rem(15);
+        line-height: 1.27;
+        padding-bottom: rem(16);
+      }
+    }
+  }
+
+  .person-txt {
+    font-size: rem(15);
+    line-height: 1.27;
+  }
+}

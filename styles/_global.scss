@@ -1,0 +1,27 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+$fw-haeding: 600;
+$fw-body: 300;
+$fw-caption: 400;
+$fw-caption-bold: 600;
+$lh-heading: 1.2727;
+$lh-body: 1.44;
+//colors
+$softBlue: #8BACD9;
+$white:#fff;
+$cyan: #00FFF8;
+$transperantCyan:rgba(0, 255, 248, 0.5);
+$darkBlue--bg: #0D192C;
+$DarkBlue--card: #15263F;
+$darkBlue--line: #2E405A;
+//grid-centering
+@mixin grid-centering {
+  display: grid;
+  place-content: center;
+}
+//flex-container
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
